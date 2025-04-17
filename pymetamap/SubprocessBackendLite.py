@@ -80,8 +80,7 @@ class SubprocessBackendLite(MetaMapLite):
                 if isinstance(restrict_to_sources, str):
                     restrict_to_sources = [restrict_to_sources]
                 if len(restrict_to_sources) > 0:
-                    command.append('--restrict_to_sources')
-                    command.append(str(','.join(restrict_to_sources)))
+                    command.append('--restrict_to_sources={}'.format(str(','.join(restrict_to_sources))))
 
             if ids is not None:
                 command.append('--inputformat=sldiwi')
